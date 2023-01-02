@@ -1,5 +1,7 @@
 # FreeGLUT Prebuilt Library
 
+[Source Code](https://github.com/FreeGLUTProject/freeglut)
+
 ## Usage
 
 ### Visual Studio 2022
