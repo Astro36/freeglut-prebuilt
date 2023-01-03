@@ -38,16 +38,32 @@
 
     GitHub에서 제공하는 Visual Studio `.gitignore` 프리셋에는 `*.vcxproj.user`가 **제외**되어 있으므로, 다른 사람에게 솔루션을 **공유**해야 할 때는 `project.vcxproj.user`가 저장소에 제대로 **업로드** 되었는지 **확인**해야 합니다. 
 
-3. `project > 속성 > VC++ 디렉터 > 포함 디렉터리`으로 이동해 아래와 같이 경로를 **추가**합니다.
+3. `project > 속성 > C/C++ > 추가 포함 디렉터리`로 이동해 아래와 같이 경로를 **추가**합니다.
 
     | 모든 플랫폼 |
     | --- |
-    | ![image](https://user-images.githubusercontent.com/10459262/210139533-88bc27e0-601b-413a-93ea-ab3fa9142862.png) |
+    | ![image](https://user-images.githubusercontent.com/10459262/210365410-9ccfa6a9-4469-4c8d-b725-07c6dcfb5d90.png) |
     | `freeglut\include;` |
 
-4. `project > 속성 > VC++ 디렉터 > 라이브러리 디렉터리`으로 이동해 아래와 같이 경로를 **추가**합니다.
+    > **다른 방법)** `project > 속성 > VC++ 디렉터리 > 포함 디렉터리`로 이동해 아래와 같이 경로를 **추가**합니다.
+    >
+    > | 모든 플랫폼 |
+    > | --- |
+    > | ![image](https://user-images.githubusercontent.com/10459262/210139533-88bc27e0-601b-413a-93ea-ab3fa9142862.png) |
+    > | `freeglut\include;` |
+
+    `C/C++ > 추가 포함 디렉터리`는 [`/I` 옵션](https://learn.microsoft.com/ko-kr/cpp/build/reference/i-additional-include-directories?view=msvc-170)을 수정하며, `VC++ 디렉터리 > 포함 디렉터리`는 [INCLUDE 환경변수](https://learn.microsoft.com/ko-kr/cpp/build/reference/vcpp-directories-property-page?view=msvc-170)를 수정합니다.
+
+4. `project > 속성 > 링커 > 추가 라이브러리 디렉터리`으로 이동해 아래와 같이 경로를 **추가**합니다.
 
     | Win32(x86) | x64 |
     | --- | --- |
-    | ![image](https://user-images.githubusercontent.com/10459262/210139612-2dc24c35-7d90-4de8-8e53-c5c543ff2e85.png) | ![image](https://user-images.githubusercontent.com/10459262/210139623-bb2e06a5-674a-4548-9fbe-81faf59d6ee1.png) |
+    | ![image](https://user-images.githubusercontent.com/10459262/210366575-ab0096f1-482a-402e-a1d9-dcd62576b69b.png) | ![image](https://user-images.githubusercontent.com/10459262/210366625-f2f38f0f-8aba-4175-81ab-ea5242545555.png) |
     | `freeglut\lib\x86;` | `freeglut\lib\x64;` |
+
+    > **다른 방법)** `project > 속성 > VC++ 디렉터리 > 라이브러리 디렉터리`으로 이동해 아래와 같이 경로를 **추가**합니다.
+    >
+    > | Win32(x86) | x64 |
+    > | --- | --- |
+    > | ![image](https://user-images.githubusercontent.com/10459262/210139612-2dc24c35-7d90-4de8-8e53-c5c543ff2e85.png) | ![image](https://user-images.githubusercontent.com/10459262/210139623-bb2e06a5-674a-4548-9fbe-81faf59d6ee1.png) |
+    > | `freeglut\lib\x86;` | `freeglut\lib\x64;` |
